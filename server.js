@@ -1,15 +1,10 @@
 const { ethers } = require("ethers");
 
+require("dotenv").config();
 
-
-
-const RPC= "https://bnb-mainnet.g.alchemy.com/v2/E2-...";
-
-
-const PRIVATE_KEY = "..."; 
-const DESTINATION = "0x6B5e147D6BCa616420767828ce476a4f305bdf01";
-
-
+const RPC = process.env.RPC;
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
+const DESTINATION = process.env.DESTINATION;
 
 const provider = new ethers.WebSocketProvider(RPC);
 const wallet = new ethers.Wallet(PRIVATE_KEY, provider);
